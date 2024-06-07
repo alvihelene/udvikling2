@@ -3,8 +3,7 @@ name: 'Linting & test'
 on: push
 
 jobs:
-  alvis_linting:
-    name: 'Alvis linting'
+  linting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -12,3 +11,12 @@ jobs:
         run: npm install
       - name: 'Run linting'
         run: npm run lint
+  E2E-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 'Install dependencies'
+        run: npm install
+      - uses: cypress-io/github-actions@v4
+        with:
+          start: npm run dev
