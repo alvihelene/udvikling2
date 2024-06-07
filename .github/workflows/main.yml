@@ -1,0 +1,14 @@
+name: 'Linting & test'
+
+on: push
+
+jobs:
+  alvis_linting:
+    name: 'Alvis linting'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 'Install dependencies'
+        run: npm install
+      - name: 'Run linting'
+        run: npm run lint
