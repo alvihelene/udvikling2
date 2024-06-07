@@ -14,9 +14,9 @@ jobs:
   E2E-Test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # githubs own action plugin - a way Github knows to get all your code from github, and run actions on it
       - name: 'Install dependencies'
         run: npm install
-      - uses: cypress-io/github-actions@v4
+      - uses: cypress-io/github-action@v4
         with:
           start: npm run dev
